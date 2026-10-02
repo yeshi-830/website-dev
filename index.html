@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Advanced Student Management System"
+    >
+
+    <title>Student Management System</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+
+            <div>
+                <h2>EduManage</h2>
+                <span>Student System</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="#dashboard" class="nav-link active">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="#students" class="nav-link">
+                <span>👨‍🎓</span>
+                Students
+            </a>
+
+            <a href="#registration" class="nav-link">
+                <span>📝</span>
+                Registration
+            </a>
+
+            <a href="#courses" class="nav-link">
+                <span>📚</span>
+                Courses
+            </a>
+
+            <a href="#attendance" class="nav-link">
+                <span>📅</span>
+                Attendance
+            </a>
+
+            <a href="#grades" class="nav-link">
+                <span>📈</span>
+                Grades
+            </a>
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="#reports" class="nav-link">
+                <span>📄</span>
+                Reports
+            </a>
+
+            <a href="#settings" class="nav-link">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="admin-avatar">A</div>
+
+            <div>
+                <strong>Administrator</strong>
+                <small>System Admin</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <button id="menuButton" class="menu-button">
+                    ☰
+                </button>
+
+                <h1>Student Management System</h1>
+
+                <p>
+                    Manage students, courses, attendance and academic records.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    title="Notifications"
+                >
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile">
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Admin</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+        <section id="dashboard" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>Overview of your student management system.</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="showSection('registration')"
+                >
+                    + Add Student
+                </button>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h3 id="totalStudents">0</h3>
+                        <small>Registered students</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        📚
+                    </div>
+
+                    <div>
+                        <span>Total Courses</span>
+                        <h3 id="totalCourses">12</h3>
+                        <small>Active courses</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        📅
+                    </div>
+
+                    <div>
+                        <span>Attendance</span>
+                        <h3>92%</h3>
+                        <small>Average attendance</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        🎓
+                    </div>
+
+                    <div>
+                        <span>Graduated</span>
+                        <h3>86</h3>
+                        <small>This academic year</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTInodeONS -->
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Quick Actions</h3>
+                            <p>Frequently used functions.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+
+                        <button
+                            onclick="showSection('registration')"
+                            class="quick-action"
+                        >
+                            <span>📝</span>
+                            <strong>Register Student</strong>
+                            <small>Add a new student</small>
+                        </button>
+
+                        <button
+                            onclick="showSection('students')"
+                            class="quick-action"
+                        >
+                            <span>👥</span>
+                            <strong>View Students</strong>
+                            <small>Manage student records</small>
+                        </button>
+
+                        <button
+                            onclick="showSection('courses')"
+                            class="quick-action"
+                        >
+                            <span>📚</span>
+                            <strong>Manage Courses</strong>
+                            <small>View available courses</small>
+                        </button>
+
+                        <button
+                            onclick="showSection('reports')"
+                            class="quick-action"
+                        >
+                            <span>📊</span>
+                            <strong>Generate Report</strong>
+                            <small>Create academic reports</small>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SYSTEM INFORMATION -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>System Information</h3>
+                            <p>Current system status.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="system-info">
+
+                        <div class="info-row">
+                            <span>System Status</span>
+                            <strong class="status-online">
+                                ● Online
+                            </strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Academic Year</span>
+                            <strong>2026 / 2027</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Semester</span>
+                            <strong>Semester 1</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Last Updated</span>
+                            <strong id="lastUpdated">
+                                Today
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STUDENTS
+        ========================== -->
+        <section id="students" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Students</h2>
+                    <p>View and manage registered students.</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="showSection('registration')"
+                >
+                    + Add Student
+                </button>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-toolbar">
+
+                    <div class="search-box">
+                        🔍
+
+                        <input
+                            type="text"
+                            id="studentSearch"
+                            placeholder="Search students..."
+                        >
+                    </div>
+
+                    <select id="departmentFilter">
+                        <option value="">All Departments</option>
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+                        <option value="Software Engineering">
+                            Software Engineering
+                        </option>
+                        <option value="Information Technology">
+                            Information Technology
+                        </option>
+                        <option value="Business">
+                            Business
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Student</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Year</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTableBody">
+
+                            <!-- JavaScript will add students here -->
+
+                            <tr id="emptyStudentMessage">
+
+                                <td colspan="7">
+
+                                    <div class="empty-state">
+
+                                        <div class="empty-icon">
+                                            👨‍🎓
+                                        </div>
+
+                                        <h3>No Students Yet</h3>
+
+                                        <p>
+                                            Register your first student
+                                            to see them here.
+                                        </p>
+
+                                        <button
+                                            class="primary-button"
+                                            onclick="showSection('registration')"
+                                        >
+                                            Register Student
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REGISTRATION
+        ========================== -->
+        <section id="registration" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Student Registration</h2>
+                    <p>
+                        Register a new student in the system.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <form id="studentForm">
+
+                    <!-- PERSONAL INFORMATION -->
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+                            <h3>Personal Information</h3>
+                            <p>
+                                Enter the student's basic information.
+                            </p>
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="studentId">
+                                    Student ID
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="studentId"
+                                    name="studentId"
+                                    placeholder="e.g. STU-2026-001"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="fullName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter full name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="student@example.com"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+251 900 000 000"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="dateOfBirth">
+                                    Date of Birth
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="dateOfBirth"
+                                    name="dateOfBirth"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="gender">
+                                    Gender
+                                </label>
+
+                                <select id="gender" name="gender">
+
+                                    <option value="">
+                                        Select gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACADEMIC INFORMATION -->
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <h3>Academic Information</h3>
+
+                            <p>
+                                Enter the student's academic details.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="department">
+                                    Department
+                                </label>
+
+                                <select
+                                    id="department"
+                                    name="department"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select department
+                                    </option>
+
+                                    <option value="Computer Science">
+                                        Computer Science
+                                    </option>
+
+                                    <option value="Software Engineering">
+                                        Software Engineering
+                                    </option>
+
+                                    <option value="Information Technology">
+                                        Information Technology
+                                    </option>
+
+                                    <option value="Business">
+                                        Business Administration
+                                    </option>
+
+                                    <option value="Accounting">
+                                        Accounting
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="year">
+                                    Year
+                                </label>
+
+                                <select
+                                    id="year"
+                                    name="year"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select year
+                                    </option>
+
+                                    <option value="1st Year">
+                                        1st Year
+                                    </option>
+
+                                    <option value="2nd Year">
+                                        2nd Year
+                                    </option>
+
+                                    <option value="3rd Year">
+                                        3rd Year
+                                    </option>
+
+                                    <option value="4th Year">
+                                        4th Year
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="semester">
+                                    Semester
+                                </label>
+
+                                <select
+                                    id="semester"
+                                    name="semester"
+                                >
+
+                                    <option value="Semester 1">
+                                        Semester 1
+                                    </option>
+
+                                    <option value="Semester 2">
+                                        Semester 2
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="enrollmentDate">
+                                    Enrollment Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="enrollmentDate"
+                                    name="enrollmentDate"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <h3>Address Information</h3>
+
+                            <p>
+                                Enter the student's contact address.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group full-width">
+
+                                <label for="address">
+                                    Address
+                                </label>
+
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    rows="4"
+                                    placeholder="Enter student's address"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FORM ACTIONS -->
+                    <div class="form-actions">
+
+                        <button
+                            type="reset"
+                            class="secondary-button"
+                        >
+                            Clear Form
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Register Student
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COURSES
+        ========================== -->
+        <section id="courses" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Courses</h2>
+                    <p>Manage academic courses.</p>
+                </div>
+
+                <button class="primary-button">
+                    + Add Course
+                </button>
+
+            </div>
+
+
+            <div class="course-grid">
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        💻
+                    </div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        HTML, CSS, JavaScript and modern web development.
+                    </p>
+
+                    <div class="course-info">
+                        <span>📚 4 Credits</span>
+                        <span>👨‍🎓 45 Students</span>
+                    </div>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        🧠
+                    </div>
+
+                    <h3>Data Structures</h3>
+
+                    <p>
+                        Algorithms, data structures and problem solving.
+                    </p>
+
+                    <div class="course-info">
+                        <span>📚 3 Credits</span>
+                        <span>👨‍🎓 38 Students</span>
+                    </div>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        🗄️
+                    </div>
+
+                    <h3>Database Systems</h3>
+
+                    <p>
+                        SQL, database design and data management.
+                    </p>
+
+                    <div class="course-info">
+                        <span>📚 3 Credits</span>
+                        <span>👨‍🎓 42 Students</span>
+                    </div>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        🤖
+                    </div>
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        Introduction to AI and intelligent systems.
+                    </p>
+
+                    <div class="course-info">
+                        <span>📚 4 Credits</span>
+                        <span>👨‍🎓 31 Students</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ATTENDANCE
+        ========================== -->
+        <section id="attendance" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Attendance</h2>
+                    <p>Monitor student attendance.</p>
+                </div>
+
+                <button class="primary-button">
+                    + Record Attendance
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📅
+                    </div>
+
+                    <h3>Attendance Management</h3>
+
+                    <p>
+                        Attendance records will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GRADES
+        ========================== -->
+        <section id="grades" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Grades</h2>
+                    <p>Manage student academic performance.</p>
+                </div>
+
+                <button class="primary-button">
+                    + Add Grade
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📈
+                    </div>
+
+                    <h3>Grade Management</h3>
+
+                    <p>
+                        Student grades will be displayed here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REPORTS
+        ========================== -->
+        <section id="reports" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Reports</h2>
+                    <p>Generate student and academic reports.</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <h3>Student Report</h3>
+
+                    <p>
+                        Generate a report containing student information.
+                    </p>
+
+                    <button class="primary-button">
+                        Generate Report
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>Academic Report</h3>
+
+                    <p>
+                        Generate academic performance reports.
+                    </p>
+
+                    <button class="primary-button">
+                        Generate Report
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SETTINGS
+        ========================== -->
+        <section id="settings" class="page-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Settings</h2>
+                    <p>Configure your management system.</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="setting-row">
+
+                    <div>
+                        <h3>System Name</h3>
+                        <p>Student Management System</p>
+                    </div>
+
+                    <button class="secondary-button">
+                        Edit
+                    </button>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+                        <h3>Academic Year</h3>
+                        <p>2026 / 2027</p>
+                    </div>
+
+                    <button class="secondary-button">
+                        Edit
+                    </button>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+                        <h3>Notifications</h3>
+                        <p>Manage system notifications.</p>
+                    </div>
+
+                    <button class="secondary-button">
+                        Configure
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+        <footer class="footer">
+
+            <p>
+                © 2026 EduManage Student Management System
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="./index.js"></script>
+
+</body>
+</html>
