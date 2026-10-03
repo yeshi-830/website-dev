@@ -288,7 +288,48 @@ if (studentForm) {
            SAVE DATA
         ----------------------------------------- */
 
-        saveStudents();
+ fetch("http://localhost:5000/api/students", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        id: student.id,
+        name: student.name,
+        email: student.email,
+        phone: student.phone,
+        dateOfBirth: student.dateOfBirth,
+        gender: student.gender,
+        department: student.department,
+        year: student.year,
+        semester: student.semester,
+        enrollmentDate: student.enrollmentDate,
+        address: student.address
+    })
+})
+then(response => response.json())
+.then(data => {
+    console.log(data);
+
+    if (!data.message) {
+        throw new Error("Student was not added.");
+    }
+
+    alert(data.message);
+})
+.catch(error => {
+    console.error(error);
+    alert("Could not connect to backend.");
+});
+then(response => response.json())
+.then(data => {
+    console.log(data);
+    alert("Student sent to backend successfully!");
+})
+.catch(error => {
+    console.error(error);
+    alert("Could not connect to backend.");
+});
 
 
         /* -----------------------------------------

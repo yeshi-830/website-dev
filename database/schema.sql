@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS students (
+    student_id VARCHAR(40) NOT NULL PRIMARY KEY,
+    name VARCHAR(160) NOT NULL,
+    email VARCHAR(254) NOT NULL UNIQUE,
+    phone VARCHAR(40) NULL,
+    date_of_birth DATE NULL,
+    gender VARCHAR(30) NULL,
+    department VARCHAR(120) NOT NULL,
+    study_year VARCHAR(30) NOT NULL,
+    semester VARCHAR(30) NULL,
+    enrollment_date DATE NULL,
+    address TEXT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'Active',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
