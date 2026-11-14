@@ -12,5 +12,7 @@ CREATE TABLE IF NOT EXISTS students (
     address TEXT NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'Active',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_students_department_year (department, study_year),
+    INDEX idx_students_created_at (created_at)
 );
